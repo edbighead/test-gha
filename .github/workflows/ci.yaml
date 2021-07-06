@@ -1,0 +1,14 @@
+name: GitHub Actions Demo
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: ls -la
+      - name: Create root owned file
+        uses: ./.github/actions/create
+        with:
+          filename: "/github/workspace/test.txt"
+      - run: ls -la
+

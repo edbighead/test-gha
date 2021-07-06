@@ -1,0 +1,13 @@
+# action.yml
+name: 'create'
+description: 'create a file'
+inputs:
+  filename:  # id of input
+    description: 'filename'
+    required: true
+    default: 'test.txt'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.filename }}
