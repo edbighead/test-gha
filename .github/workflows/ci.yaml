@@ -5,7 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: ls -la
+      - run: |
+          hostname
+          ls -la
       - name: Create root owned file
         uses: ./.github/actions/create
         with:
